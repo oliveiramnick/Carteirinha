@@ -99,7 +99,7 @@ fun CarteirinhaDeEstudante(modifier: Modifier = Modifier) {
 
             Row (
                 modifier = Modifier
-                    .weight(2f)
+                    .weight(3f)
                     .fillMaxSize(.9f),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalAlignment = Alignment.CenterVertically
