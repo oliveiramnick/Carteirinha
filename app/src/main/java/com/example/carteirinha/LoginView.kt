@@ -4,6 +4,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -51,7 +52,7 @@ fun LoginView(modifier : Modifier = Modifier) {
         Button(
             onClick = { },
             modifier = Modifier
-                .size(width = 300.dp, height = 48.dp),
+                .fillMaxWidth(.6f),
             shape = RoundedCornerShape(9.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = MaterialTheme.colorScheme.background
