@@ -46,114 +46,29 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppTheme() {
                 Scaffold { innerPadding ->
-                    CarteirinhaDeEstudante(
-                        modifier = Modifier
-                            .padding(innerPadding)
-                            .fillMaxSize()
-                    )
                 }
             }
         }
     }
 }
-
+@Preview(
+    showBackground = true,
+    showSystemUi = true
+)
 @Composable
-
-fun CarteirinhaDeEstudante(modifier: Modifier = Modifier) {
-    Box(){
-        Image(
-            painter = painterResource( R.drawable.wallpaper),
-            contentDescription = null,
-            contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .fillMaxSize()
-                .alpha(.3f)
-        )
-        Column(modifier = modifier
-            .fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(16.dp))
-        {
-            Image(
-                painter = painterResource( R.drawable.img),
-                contentDescription = null,
-                modifier = Modifier.
-                fillMaxWidth(.6f)
-                    .background(color = Color.Blue)
-
-            )
-            Spacer(modifier = Modifier.weight(.3f)
-            )
-            Image(
-                painter = painterResource( R.drawable.avatar),
-                contentDescription = null,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.
-                weight(2f)
-                    .fillMaxSize(.6f)
-                    .aspectRatio(1f)
-                    .clip(CircleShape)
-
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-
-            Row (
-                modifier = Modifier
-                    .weight(3f)
-                    .fillMaxSize(.9f),
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                verticalAlignment = Alignment.CenterVertically
-
-            ){
-                Text(
-                    text="Nome: ",
-                    style= MaterialTheme.typography.bodyMedium,
-                    textAlign = TextAlign.Right,
-                    modifier = Modifier
-                        .weight(1f)
-                )
-                Text(
-                    text = "Nicoly Machado",
-                    fontSize = MaterialTheme.typography.titleLarge.fontSize,
-                    modifier = Modifier.weight(3f),
-                    fontFamily = MaterialTheme.typography.titleLarge.fontFamily,
-                    color = MaterialTheme.colorScheme.primary
-                )
-
-            }
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Row {
-
-                Text(
-
-                    text = "Curso: ",
-
-                    fontSize = 20.sp,
-
-                    style = MaterialTheme.typography.bodyMedium
-
-                )
-
-                Text(
-
-                    text = "Desenvolvimento de Sistemas",
-
-                    fontSize = 20.sp,
-
-                    style = MaterialTheme.typography.bodyLarge
-
-                )
-
-            }
-            QrCode(
-                conteudo = "24247634"
-            )
-
-        }
-
+fun PreviewCarterinhaClaro(){
+    AppTheme(darkTheme = false) {
+        CarteirinhaView(modifier = Modifier.padding(16.dp))
     }
-
+}
+@Preview(
+    showBackground = true,
+    showSystemUi = true
+)
+@Composable
+fun PreviewCarterinhaEscuro(){
+    AppTheme(darkTheme = true) {
+        CarteirinhaView(modifier = Modifier.padding(16.dp))
+    }
 }
 

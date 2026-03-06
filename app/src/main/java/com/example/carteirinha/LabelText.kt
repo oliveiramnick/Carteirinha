@@ -1,0 +1,22 @@
+package com.example.carteirinha
+
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
+
+@Composable
+fun LabelText(
+    label : String,
+    modifier : Modifier = Modifier
+){
+    Text(
+       text = label,
+        style = MaterialTheme.typography.bodyLarge,
+        fontFamily = MaterialTheme.typography.bodyLarge.fontFamily,
+        textAlign = TextAlign.Right,
+        modifier = Modifier,
+        color = MaterialTheme.colorScheme.onError
+    )
+}
