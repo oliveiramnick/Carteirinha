@@ -1,6 +1,5 @@
-package com.example.carteirinha
+package com.example.carteirinha.feature.carteirinha.presentation.component
 
-import android.R.attr.text
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text

@@ -1,4 +1,4 @@
-package com.example.carteirinha
+package com.example.carteirinha.feature.carteirinha.presentation.component
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text

@@ -1,4 +1,4 @@
-package com.example.carteirinha
+package com.example.carteirinha.feature.carteirinha.presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,22 +24,29 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.carteirinha.feature.carteirinha.presentation.component.LabelText
+import com.example.carteirinha.R
+import com.example.carteirinha.feature.carteirinha.presentation.component.ValueText
 import com.rafaelcosta.myapplication.QrCode
 
 
 @Composable
 fun CarteirinhaView(modifier: Modifier = Modifier) {
-    Box(){
+    Box(
+        modifier = modifier
+    ){
         Image(
             painter = painterResource( R.drawable.wallpaper),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .fillMaxSize()
-                .alpha(.3f)
+                .alpha(.7f)
         )
-        Column(modifier = modifier
-            .fillMaxSize(),
+        Column(
+            modifier = modifier
+            .fillMaxSize()
+            .padding(20.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(16.dp))
         {
@@ -50,7 +58,9 @@ fun CarteirinhaView(modifier: Modifier = Modifier) {
                     .background(color = Color.Blue)
 
             )
-            Spacer(modifier = Modifier.weight(.3f)
+            Spacer(
+                modifier = Modifier
+                    .weight(.3f)
             )
             Image(
                 painter = painterResource( R.drawable.avatar),
@@ -78,7 +88,7 @@ fun CarteirinhaView(modifier: Modifier = Modifier) {
                     modifier = Modifier.weight(1f)
                 )
                 ValueText(
-                    value ="Nicoly Machado",
+                    value = "Nicoly Machado",
                     modifier = Modifier.weight(4f),
                 )
 

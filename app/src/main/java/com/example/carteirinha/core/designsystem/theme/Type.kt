@@ -1,4 +1,4 @@
-package com.example.carteirinha.ui.theme
+package com.example.carteirinha.core.designsystem.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
@@ -35,7 +35,7 @@ val baseline = Typography()
 
 val AppTypography = Typography(
     titleLarge = TextStyle(
-        fontFamily = FontFamily.Cursive,
+        fontFamily = FontFamily.SansSerif,
         fontWeight = FontWeight.SemiBold,
         fontSize = 20.sp
     ),
