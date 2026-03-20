@@ -1,89 +1,34 @@
 package com.example.carteirinha.feature.auth.presentation
 
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.MaterialTheme
 
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import com.example.carteirinha.core.designsystem.theme.AppTheme
+import androidx.navigation.NavController
+import com.example.carteirinha.core.navigation.Routes
+
 
 @Composable
-fun LoginView(modifier : Modifier = Modifier) {
-    Column(
-        modifier = modifier,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(
-            space = 16.dp,
-            alignment = Alignment.CenterVertically
-        )
-    ){
-        TextField(
-            value = " ",
-            onValueChange = {},
-            label = {
-                Text(text = "Login")
-            },
-        )
-        TextField(
-            value = " ",
-            onValueChange = {},
-            label = {
-                Text(text = "Senha")
-            },
-        )
-        Button(
-            onClick = { },
-            modifier = Modifier
-                .fillMaxWidth(.6f),
-            shape = RoundedCornerShape(9.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = MaterialTheme.colorScheme.background
-            ),
-            border = BorderStroke(
-                width = 2.dp,
-                color = MaterialTheme.colorScheme.secondary
+fun LoginScreen(
+    modifier: Modifier = Modifier,
+    navController: NavController
+) {
+    var login by remember { mutableStateOf("") }
+    var senha by remember { mutableStateOf("") }
+
+    LoginContent(
+        login = login,
+        senha = senha,
+        onLoginChange = { it },
+        onSenhaChange = { it },
+        onLoginClick = {
+            navController.navigate(
+                Routes.Home.route
             )
-        ) {
-            Text(text = "Entrar")
-        }
-
-    }
-}
-@Preview(
-    showBackground = true,
-    showSystemUi = true
-)
-@Composable
-fun PreviewLoginClaro(){
-    AppTheme(darkTheme = false) {
-        LoginView(modifier = Modifier
-            .padding(16.dp)
-            .fillMaxSize())
-    }
-}
-@Preview(
-    showBackground = true,
-    showSystemUi = true
-)
-@Composable
-fun PreviewLoginEscuro() {
-    AppTheme(darkTheme = true) {
-        LoginView(modifier = Modifier
-            .padding(16.dp)
-            .fillMaxSize())
-
-    }
+        },
+        modifier = modifier
+    )
 }
