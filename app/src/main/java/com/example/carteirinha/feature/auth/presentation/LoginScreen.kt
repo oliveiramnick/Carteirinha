@@ -26,7 +26,7 @@ fun LoginScreen(
         onSenhaChange = { it },
         onLoginClick = {
             navController.navigate(
-                Routes.Home.route
+                Routes.Carteirinha.route
             )
         },
         modifier = modifier

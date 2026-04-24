@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Carteirinha</string>
+    <string name="login">Login</string>
 </resources>
