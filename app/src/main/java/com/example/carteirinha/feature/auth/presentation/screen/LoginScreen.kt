@@ -1,4 +1,4 @@
-package com.example.carteirinha.feature.auth.presentation
+package com.example.carteirinha.feature.auth.presentation.screen
 
 
 import androidx.compose.runtime.Composable
@@ -8,7 +8,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
-import com.example.carteirinha.core.navigation.Routes
+import com.example.carteirinha.core.designsystem.navigation.Routes
 
 
 @Composable

@@ -1,4 +1,4 @@
-package com.rafaelcosta.myapplication
+package com.example.carteirinha.feature.carteirinha.presentation.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
@@ -9,6 +9,7 @@ import androidx.core.graphics.createBitmap
 
 import android.graphics.Bitmap
 import android.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
 import com.google.zxing.qrcode.QRCodeWriter
@@ -56,5 +57,11 @@ fun gerarQrCode(
     }
 
     return bitmap
+}
+
+@Preview(showBackground = true)
+@Composable
+fun QrCodePreviewClaro() {
+    QrCode("seunumerodematriculaaqui")
 }
 

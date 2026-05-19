@@ -1,4 +1,4 @@
-package com.example.carteirinha.feature.auth.presentation
+package com.example.carteirinha.feature.auth.presentation.screen
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
@@ -10,12 +10,13 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,17 +24,37 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.carteirinha.R
-import com.example.carteirinha.core.designsystem.theme.AppTheme
+
+@Composable
+fun LoginScreen(
+    modifier: Modifier = Modifier
+) {
+    var login by remember { mutableStateOf("") }
+    var senha by remember { mutableStateOf("") }
+
+    LoginContent(
+        modifier = modifier,
+        login = login,
+        senha = senha,
+        onLoginChange = { login = it },
+        onSenhaChange = { senha = it },
+        onLoginClick = {
+            println("Login: $login")
+            println("Senha: $senha")
+        }
+    )
+}
 
 @Composable
 fun LoginContent(
     modifier: Modifier = Modifier,
-    login: String = "",
-    senha: String = "",
-    onLoginChange: (String) -> Unit = {},
-    onSenhaChange: (String) -> Unit ={},
-    onLoginClick: () -> Unit = {}
+    login: String,
+    senha: String,
+    onLoginChange: (String) -> Unit,
+    onSenhaChange: (String) -> Unit,
+    onLoginClick: () -> Unit
 ) {
+
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -44,11 +65,10 @@ fun LoginContent(
             alignment = Alignment.CenterVertically
         )
     ) {
-        var login2 by remember { mutableStateOf("") }
 
         TextField(
-            value = login2,
-            onValueChange = {login2 += it},
+            value = login,
+            onValueChange = onLoginChange,
             label = {
                 Text(stringResource(R.string.login))
             }
@@ -58,23 +78,27 @@ fun LoginContent(
             value = senha,
             onValueChange = onSenhaChange,
             label = {
-                Text("Senha")
+                Text(text = "Senha")
             }
         )
 
         Button(
             onClick = onLoginClick,
             modifier = Modifier.fillMaxWidth(0.6f),
-            shape = RoundedCornerShape(size = 9.dp),
+            shape = RoundedCornerShape(9.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = MaterialTheme.colorScheme.background
+                containerColor = MaterialTheme.colorScheme.primary
             ),
             border = BorderStroke(
-                2.dp,
-                MaterialTheme.colorScheme.primary
+                width = 2.dp,
+                color = MaterialTheme.colorScheme.primary
             )
         ) {
-            Text("Entrar")
+
+            Text(
+                text = "Entrar",
+                color = MaterialTheme.colorScheme.onPrimary
+            )
         }
     }
 }
@@ -84,19 +108,13 @@ fun LoginContent(
     showSystemUi = true
 )
 @Composable
-fun PreviewLoginContentClaro() {
-    AppTheme(darkTheme = false) {
-        LoginContent( )
-    }
-}
+fun PreviewLoginScreen() {
 
-@Preview(
-    showBackground = true,
-    showSystemUi = true
-)
-@Composable
-fun PreviewLoginContentEscuro() {
-    AppTheme(darkTheme = true) {
-        LoginContent( )
+    MaterialTheme {
+
+        Surface {
+
+            LoginScreen()
+        }
     }
 }

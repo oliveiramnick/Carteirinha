@@ -8,15 +8,15 @@ import androidx.compose.ui.text.style.TextAlign
 
 @Composable
 fun LabelText(
-    label : String,
-    modifier : Modifier = Modifier
-){
+    label: String,
+    modifier: Modifier = Modifier
+) {
     Text(
-       text = label,
+        text = label,
+        textAlign = TextAlign.Right,
         style = MaterialTheme.typography.bodyLarge,
         fontFamily = MaterialTheme.typography.bodyLarge.fontFamily,
-        textAlign = TextAlign.Right,
-        modifier = Modifier,
-        color = MaterialTheme.colorScheme.onError
+        modifier = modifier,
+        color = MaterialTheme.colorScheme.onSurface
     )
 }

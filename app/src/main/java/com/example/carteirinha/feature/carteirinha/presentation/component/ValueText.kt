@@ -12,19 +12,18 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun ValueText(
     value: String,
-    fontSize : TextUnit = MaterialTheme.typography.titleLarge.fontSize,
+    fontSize: TextUnit = MaterialTheme.typography.titleLarge.fontSize,
     fontWeight: FontWeight = MaterialTheme.typography.titleLarge.fontWeight ?: FontWeight.Normal,
-    modifier : Modifier = Modifier
-)
-{
+    modifier: Modifier = Modifier
+) {
     Text(
         text = value,
         fontSize = fontSize,
         fontWeight = fontWeight,
         fontFamily = MaterialTheme.typography.titleLarge.fontFamily,
         lineHeight = MaterialTheme.typography.titleLarge.lineHeight,
-        modifier = modifier
-            .padding(start = 8.dp),
-        softWrap = true
+        modifier = modifier,
+        softWrap = true,
+        color = MaterialTheme.colorScheme.onSurface
     )
 }

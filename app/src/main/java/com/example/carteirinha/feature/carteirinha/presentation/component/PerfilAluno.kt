@@ -18,11 +18,17 @@ import androidx.compose.ui.unit.sp
 import com.example.carteirinha.R
 
 @Composable
-fun PerfilAluno(modifier: Modifier = Modifier) {
+fun PerfilAluno(
+    nome: String,
+    curso: String,
+    turma: String,
+    matricula: String,
+    unidade: String,
+    status: String,
+    modifier: Modifier = Modifier
+) {
     Column(
-        modifier = modifier
-            .fillMaxWidth()
-        ,
+        modifier = modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(
             space = 10.dp,
@@ -40,15 +46,43 @@ fun PerfilAluno(modifier: Modifier = Modifier) {
         )
         InfoAluno(
             labelText = "Nome",
-            valueText = "Nicoly Machado",
-            modifier = Modifier.fillMaxWidth(),
+            valueText = nome,
+            modifier = Modifier.fillMaxWidth()
         )
         InfoAluno(
             labelText = "Curso",
-            valueText = "Técnico em Desenvolvimento de Sistemas",
+            valueText = curso,
             fontWeight = FontWeight.Normal,
             fontSize = 20.sp,
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth()
+        )
+        InfoAluno(
+            labelText = "Turma",
+            valueText = turma,
+            fontWeight = FontWeight.Normal,
+            fontSize = 18.sp,
+            modifier = Modifier.fillMaxWidth()
+        )
+        InfoAluno(
+            labelText = "Matrícula",
+            valueText = matricula,
+            fontWeight = FontWeight.Normal,
+            fontSize = 18.sp,
+            modifier = Modifier.fillMaxWidth()
+        )
+        InfoAluno(
+            labelText = "Unidade",
+            valueText = unidade,
+            fontWeight = FontWeight.Normal,
+            fontSize = 18.sp,
+            modifier = Modifier.fillMaxWidth()
+        )
+        InfoAluno(
+            labelText = "Status",
+            valueText = status,
+            fontWeight = FontWeight.Bold,
+            fontSize = 18.sp,
+            modifier = Modifier.fillMaxWidth()
         )
     }
 }
