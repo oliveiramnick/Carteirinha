@@ -3,7 +3,10 @@ package com.example.carteirinha.core.designsystem.navigation
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.MenuBook
+import androidx.compose.material.icons.filled.Badge
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -20,6 +23,7 @@ import com.example.carteirinha.core.session.LoggedUser
 import com.example.carteirinha.feature.auth.presentation.screen.LoginScreen
 import com.example.carteirinha.feature.carteirinha.presentation.screen.CarteirinhaScreen
 import com.example.carteirinha.feature.home.presentation.screen.HomeScreen
+
 
 @Composable
 fun AppNavHost(

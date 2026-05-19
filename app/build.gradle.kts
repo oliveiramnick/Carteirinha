@@ -40,6 +40,9 @@ android {
 }
 
 dependencies {
+    implementation("androidx.compose.material3:material3:1.2.0")
+// ou versão mais recente
+    implementation("androidx.compose.material:material-icons-extended:1.5.0")
     implementation("com.google.zxing:core:3.5.3")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
