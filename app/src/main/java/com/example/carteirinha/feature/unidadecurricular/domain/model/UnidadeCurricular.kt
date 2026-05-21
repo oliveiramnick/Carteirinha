@@ -1,4 +1,4 @@
-package com.example.carteirinha.feature.unidadecurricular2.domain.model
+package com.example.carteirinha.feature.unidadecurricular.domain.model
 
 data class UnidadeCurricular(
     val id: String,

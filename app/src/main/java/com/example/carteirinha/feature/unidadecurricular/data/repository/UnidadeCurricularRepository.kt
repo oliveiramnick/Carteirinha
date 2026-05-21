@@ -1,6 +1,6 @@
-package com.example.carteirinha.feature.unidadecurricular2.data.repository
+package com.example.carteirinha.feature.unidadecurricular.data.repository
 
-import com.example.carteirinha.feature.unidadecurricular2.domain.model.UnidadeCurricular
+import com.example.carteirinha.feature.unidadecurricular.domain.model.UnidadeCurricular
 
 interface UnidadeCurricularRepository {
     suspend fun buscarUnidadesCurriculares(): Result<List<UnidadeCurricular>>

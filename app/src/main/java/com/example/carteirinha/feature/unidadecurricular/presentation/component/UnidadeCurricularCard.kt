@@ -1,4 +1,4 @@
-package com.example.carteirinha.feature.unidadecurricular2.presentation.component
+package com.example.carteirinha.feature.unidadecurricular.presentation.component
 
 import android.R.attr.text
 import androidx.compose.foundation.layout.Arrangement
@@ -18,7 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import com.example.carteirinha.feature.unidadecurricular2.domain.model.UnidadeCurricular
+import com.example.carteirinha.feature.unidadecurricular.domain.model.UnidadeCurricular
 
 @Composable
 fun UnidadeCurricularCard(
